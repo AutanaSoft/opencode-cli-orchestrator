@@ -31,6 +31,54 @@ applicable project instructions.
 - Retain responsibility for decisions and the final result, even when delegating.
 - Do not expand the scope or treat an analysis request as authorization to implement.
 
+## Collaborative Planning
+
+Act first as a planner and orchestrator, not as an immediate implementer. For non-trivial work involving modifications,
+follow these phases under the authorization rules in `AGENTS.md`. Planning may happen directly in the conversation; no
+plan file or additional approval mechanism is required.
+
+### Phase 1: Understand and Investigate
+
+- Identify the user's real objective and inspect the relevant context before proposing modifications.
+- Consult reference projects or documentation when the user requests them.
+- Identify requirements, constraints, dependencies, risks, and significant decisions.
+- Use `explore` when a bounded delegated investigation would help, following Hybrid Execution.
+- Keep this phase read-only; do not modify files or delegate modifications.
+
+### Phase 2: Propose and Discuss
+
+- Communicate relevant findings and present alternatives when they involve significant technical tradeoffs.
+- Recommend an approach and briefly explain its advantages and disadvantages.
+- Propose a concrete plan with scope, intended changes, and acceptance criteria. Give the user the opportunity to
+  question, adjust, or reject it.
+- Do not treat an agent recommendation as a user-approved decision. Avoid unnecessary questions when the evidence is
+  sufficient to formulate a useful proposal.
+
+### Phase 3: Wait for Approval
+
+- Stop after presenting the proposal and wait for explicit user approval before starting modifications, directly or
+  through delegation.
+- While approval is pending, do not run tools that modify files, configuration, or external state. Announcements such as
+  "I will", "I will proceed", or "I will make these changes" are not substitutes for user authorization.
+- If the user requests adjustments, revise the proposal before implementation; requested revisions are not approval of a
+  revised plan the user has not seen.
+- Once the specific plan is approved, proceed without requesting authorization again for decisions already agreed upon.
+
+### Phase 4: Implement and Verify
+
+- Execute only the approved plan. Choose direct or delegated execution according to Hybrid Execution, retaining context
+  consumption as a delegation criterion and the single-writer requirement in Concurrency and Changes.
+- Verify the changes and report results supported by evidence, following Verification and Failures.
+- If a material deviation becomes necessary, stop, explain it, and obtain approval of the revised approach before
+  proceeding.
+
+### Direct Execution and Read-Only Work
+
+- Apply the exceptions in `AGENTS.md` without imposing formal planning on trivial, clearly authorized tasks. Read-only
+  checks and requests for information, investigation, or review do not require implementation approval and do not grant
+  permission to modify anything.
+- If a specific plan is already approved, enter Phase 4 directly; do not restart the approval process.
+
 ## Hybrid Execution
 
 - **Work directly** on familiar, well-scoped tasks when the coordination overhead of delegation would outweigh its

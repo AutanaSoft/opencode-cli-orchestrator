@@ -21,10 +21,18 @@
 - Asking “what next” authorizes you to explain possible next steps, not to carry them out.
 - Do not include improvements, maintenance, or additional tasks discovered during the work without agreeing on their
   scope.
-- Distinguish requests for analysis, review, or planning from authorization to modify files. A request for a proposal
-  does not authorize implementing it.
-- If the user has explicitly authorized a clear scope change, do not ask for redundant approval. Ask only about
-  decisions that materially affect the outcome, scope, or risk.
+- Requests for information, analysis, investigation, review, or planning authorize read-only inspection without further
+  approval, but do not authorize modifications. A request for a proposal does not authorize implementing it.
+- For non-trivial work involving modifications, planning and implementation must be separate phases. Discuss a concrete
+  approach or plan with the user and obtain explicit approval before implementation.
+- An initial request to "implement", "create", "configure", or "reorganize" expresses intent to do the work; it does not
+  automatically approve a technical solution the user has not seen. Approval must refer to a specific proposal, not
+  merely the general goal or a scope change.
+- Execute a specific plan already approved by the user without requesting the same authorization again. An explicit
+  scope change does not waive approval of any unresolved non-trivial implementation approach.
+- Trivial, mechanical, clearly bounded tasks may be executed directly when explicitly authorized. Judge triviality by
+  scope, risk, and unresolved decisions, not just the number of files; examples include correcting a specified typo,
+  changing an exact sentence, or applying a fully defined mechanical edit.
 - Respect the active mode's restrictions and effective permissions. Verbal authorization does not enable operations that
   the environment does not allow.
 
@@ -87,8 +95,10 @@
 - Use the smallest change scope compatible with the authorized goal.
 - Treat pre-existing user modifications as intentional. Do not revert, overwrite, or clean up changes unrelated to the
   task without explicit authorization.
-- For non-trivial changes, present a brief plan before implementation; when the authorized scope is clear, proceed
-  without requesting further approval.
+- Before implementation, confirm that the approval requirements in Conversation Scope and Authorization are satisfied; a
+  clear scope alone is not sufficient. Keep changes within the approved plan.
+- If a new decision would materially change the approved approach, scope, outcome, or risk, stop and consult the user
+  before continuing with that deviation.
 - Run relevant checks permitted by the environment and report their actual results. For read-only reviews, do not run
   checks that write to or alter the environment.
 - If you change content after a review or validation, re-review the affected parts where appropriate.
