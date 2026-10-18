@@ -28,12 +28,11 @@
   "scripts": {
     "install:opencode": "node scripts/install.mjs",
     "install:opencode:check": "node scripts/install.mjs --dry-run",
-    "check": "pnpm format:check && pnpm lint:markdown",
+    "check": "pnpm format:check && pnpm test",
     "test": "node --test",
-    "format": "prettier --write \"**/*.{md,json,jsonc,js,mjs}\"",
-    "format:check": "prettier --check \"**/*.{md,json,jsonc,js,mjs}\"",
-    "lint:markdown": "markdownlint-cli2 \"**/*.md\"",
-    "lint:markdown:fix": "pnpm format && markdownlint-cli2 --fix \"**/*.md\" && pnpm format:check",
+    "format": "prettier --write . && pnpm lint:md",
+    "format:check": "prettier --check . && pnpm lint:md",
+    "lint:md": "markdownlint-cli2 \"**/*.md\"",
     "lint:staged": "lint-staged",
     "commitlint": "commitlint",
     "prepare": "husky"

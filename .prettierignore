@@ -2,6 +2,10 @@
 /.agents/
 /.claude/
 
+# Local tool artifacts are not maintained by the project formatter.
+/.atl/
+/.codegraph/
+
 # pnpm owns the lockfile formatting.
 pnpm-lock.yaml
 

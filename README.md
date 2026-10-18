@@ -130,9 +130,16 @@ not a sandbox and do not eliminate all windows between checking and writing.
 ## Development Checks
 
 ```bash
-pnpm test
-pnpm check
+pnpm format        # Apply Prettier, then check Markdownlint.
+pnpm format:check  # Check Prettier and Markdownlint without modifying files.
+pnpm lint:md       # Check Markdown only.
+pnpm test          # Run the Node.js automated tests.
+pnpm check         # Check formatting and Markdown, then run the automated tests.
 ```
 
-`pnpm check` verifies formatting and Markdown. For Markdown changes, run Prettier before Markdownlint; avoid running the
-global formatter if you only want to modify specific documentation files.
+`pnpm format` does not automatically fix Markdownlint errors; resolve any reported issues manually. Both `format` and
+`format:check` run Markdownlint only after Prettier succeeds. `pnpm check` includes the automated tests and stops if
+formatting or Markdown validation fails.
+
+For Markdown changes, run Prettier before Markdownlint; avoid running the global formatter if you only want to modify
+specific documentation files.
