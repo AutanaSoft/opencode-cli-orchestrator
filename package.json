@@ -26,17 +26,17 @@
   ],
   "type": "module",
   "scripts": {
-    "prepare": "husky",
     "install:opencode": "node scripts/install.mjs",
     "install:opencode:check": "node scripts/install.mjs --dry-run",
+    "check": "pnpm format:check && pnpm lint:markdown",
     "test": "node --test",
     "format": "prettier --write \"**/*.{md,json,jsonc,js,mjs}\"",
     "format:check": "prettier --check \"**/*.{md,json,jsonc,js,mjs}\"",
     "lint:markdown": "markdownlint-cli2 \"**/*.md\"",
     "lint:markdown:fix": "pnpm format && markdownlint-cli2 --fix \"**/*.md\" && pnpm format:check",
-    "check": "pnpm format:check && pnpm lint:markdown",
     "lint:staged": "lint-staged",
-    "commitlint": "commitlint"
+    "commitlint": "commitlint",
+    "prepare": "husky"
   },
   "engines": {
     "node": ">=22"
