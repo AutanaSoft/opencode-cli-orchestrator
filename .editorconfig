@@ -1,0 +1,34 @@
+# EditorConfig: https://editorconfig.org
+#
+# EditorConfig helps maintain consistent coding styles across different
+# editors and IDEs. This file defines project-wide formatting rules
+# that supported editors will automatically apply.
+
+# root = true stops EditorConfig from searching for .editorconfig files
+root = true
+
+# ============================================================================
+# DEFAULT RULES — Apply to all files unless overridden below
+# ============================================================================
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+max_line_length = 120
+
+# ============================================================================
+# MARKDOWN — Documentation files
+# ============================================================================
+[*.{md,mdx,markdown}]
+trim_trailing_whitespace = false
+
+# ============================================================================
+# MANIFEST FILES — Enable only for tab-separated manifest formats
+# ============================================================================
+#[*manifest*]
+#indent_style = tab
+#indent_size = unset
+#tab_width = 2

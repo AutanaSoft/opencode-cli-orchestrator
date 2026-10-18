@@ -1,0 +1,9 @@
+# Versioned external skill artifacts; preserve their upstream formatting.
+/.agents/
+/.claude/
+
+# pnpm owns the lockfile formatting.
+pnpm-lock.yaml
+
+# Husky hook scripts are executable shell entrypoints.
+.husky/

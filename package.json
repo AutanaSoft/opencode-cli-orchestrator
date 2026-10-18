@@ -1,0 +1,55 @@
+{
+  "name": "opencode-cli-orchestrator",
+  "displayName": "OpenCode Orchestrator",
+  "version": "0.1.0",
+  "description": "Hybrid OpenCode orchestration configuration with specialized agents and optional task templates.",
+  "private": true,
+  "license": "MIT",
+  "author": {
+    "name": "AutanaSoft",
+    "email": "admin@autanasoft.com",
+    "url": "https://autanasoft.com"
+  },
+  "homepage": "https://github.com/AutanaSoft/opencode-cli-orchestrator#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AutanaSoft/opencode-cli-orchestrator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AutanaSoft/opencode-cli-orchestrator/issues"
+  },
+  "keywords": [
+    "opencode",
+    "orchestration",
+    "ai-agents",
+    "developer-tools"
+  ],
+  "type": "module",
+  "scripts": {
+    "prepare": "husky",
+    "install:opencode": "node scripts/install.mjs",
+    "install:opencode:check": "node scripts/install.mjs --dry-run",
+    "test": "node --test",
+    "format": "prettier --write \"**/*.{md,json,jsonc,js,mjs}\"",
+    "format:check": "prettier --check \"**/*.{md,json,jsonc,js,mjs}\"",
+    "lint:markdown": "markdownlint-cli2 \"**/*.md\"",
+    "lint:markdown:fix": "pnpm format && markdownlint-cli2 --fix \"**/*.md\" && pnpm format:check",
+    "check": "pnpm format:check && pnpm lint:markdown",
+    "lint:staged": "lint-staged",
+    "commitlint": "commitlint"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^20.5.3",
+    "@commitlint/config-conventional": "^20.5.3",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.2",
+    "markdownlint-cli2": "^0.23.2",
+    "prettier": "^3.9.6"
+  },
+  "dependencies": {
+    "jsonc-parser": "^3.3.1"
+  }
+}
