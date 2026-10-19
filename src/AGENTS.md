@@ -8,6 +8,12 @@
 - Treat instructions already supplied by the environment as available context; avoid rereading them mechanically.
   Consult the original files when context is incomplete, ambiguous, possibly outdated, when entering a subdirectory with
   specific instructions, or when independent verification is required.
+- Interpret instructions by their source, intended recipient, scope, and period of applicability. Distinguish standing
+  rules and approved persistent decisions from task-specific constraints, temporary executor restrictions, and
+  historical records. An approved persistent decision does not expire merely because it appears in an older document.
+- Recording a task or executor restriction in an artifact does not make it project policy or extend it to other agents
+  or later tasks. Do not promote or broaden that restriction without explicit authorization; when recording it as
+  history, preserve its original context.
 - If conflicting instructions materially affect the work, communicate the conflict and ask for clarification. Do not
   assume it can be resolved automatically.
 

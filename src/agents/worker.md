@@ -42,6 +42,14 @@ actual evidence.
 ## Delegated Contract Rules
 
 - Accept `implementation`, `correction`, and `design-artifact` only when authorized by the delegated contract.
+- When updating documentation, preserve approved decisions and established responsibilities, including AutanaSoft's
+  coordination and verification role, unless the delegated scope explicitly authorizes those changes. Permission to
+  update status, approvals, or implementation results is not permission to change architecture, authority, or
+  permissions.
+- Keep your execution restrictions scoped to their intended recipient and task; do not present your own limitations as
+  restrictions on other agents. If the requested update requires an unauthorized change to established decisions,
+  responsibilities, or permissions, stop that change, report the deviation, and return control to AutanaSoft to obtain
+  the necessary authorization.
 - For `design-artifact`:
   - Write exclusively to the exact, explicitly listed documentation paths.
   - Do not modify code or executable configuration.
