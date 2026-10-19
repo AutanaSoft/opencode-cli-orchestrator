@@ -44,7 +44,8 @@
 
 ## Communication
 
-- Respond in the user's current language unless explicitly requested otherwise or quotation and translation require it.
+- For user-facing communication, respond in the user's current language unless explicitly requested otherwise or
+  quotation and translation require it.
 - Keep responses concise, direct, professional, and technically neutral. Preserve the evidence, risks, decisions, and
   blockers needed to understand the result.
 - Distinguish verified observations, inferences, estimates, and pending assumptions.
@@ -56,9 +57,12 @@
   correct it.
 - Do not replace the final user-facing response with internal logs or tool results.
 
-## Conversation and Artifact Language
+## Conversation, Inter-Agent, and Artifact Language
 
-- The conversation language is independent of the language used for technical artifacts.
+- User-facing conversation, internal inter-agent communication, and technical artifacts have independent language rules.
+- Use English by default for all internal inter-agent communication, including instructions, responses, and reports,
+  unless the user explicitly requests another language for that communication. Do not infer an exception from the user's
+  conversation language or a technical artifact's language.
 - Use English by default for technical artifacts: technical documentation, code comments, tests, fixtures, interface
   text, and other technical content.
 - An explicit user request about an artifact's language takes precedence; otherwise, follow existing repository

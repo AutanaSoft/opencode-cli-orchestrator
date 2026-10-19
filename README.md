@@ -68,6 +68,24 @@ The six templates in `src/templates/` are always installed. Using them in agents
 `AGENTS.md` and the four agents (`AutanaSoft`, `explore`, `worker`, and `review`) are also installed. Source files in
 `src/` are not modified to adapt to the destination.
 
+### Instruction Sources
+
+The installer copies `src/AGENTS.md` to `AGENTS.md` in the selected configuration directory and installs agent
+definitions under `agents/`. The repository root `AGENTS.md` is development guidance for this repository, not the
+distributed shared orchestration rules.
+
+OpenCode V2 loads the global `AGENTS.md` alongside applicable project instruction files. These sources are combined;
+OpenCode does not automatically resolve conflicts between them. Project instructions remain separate from the shared
+orchestration rules. See the official
+[instruction loading and scope documentation](https://opencode.ai/v2/docs/instructions).
+
+References to "shared orchestration rules" in AutanaSoft identify the general instructions supplied by the OpenCode
+configuration. They do not load files. Additional instruction files require OpenCode's documented discovery or
+configured `instructions` mechanism.
+
+The installation destination must match the configuration directory used by OpenCode. Choosing an arbitrary
+`--config-dir` only changes where the installer writes files; it does not activate that directory in OpenCode.
+
 ## Existing Configuration and Conflicts
 
 The installer preserves properties, providers, models, plugins, permissions, MCP servers, and instructions that it does
